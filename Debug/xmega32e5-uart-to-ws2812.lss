@@ -1,0 +1,771 @@
+
+xmega32e5-uart-to-ws2812.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000484  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000020  00802000  00000484  00000518  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000bc2  00802020  00802020  00000538  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000538  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000568  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000078  00000000  00000000  000005a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000032ba  00000000  00000000  00000620  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00001c4c  00000000  00000000  000038da  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000067a  00000000  00000000  00005526  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000010c  00000000  00000000  00005ba0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00003094  00000000  00000000  00005cac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000011d  00000000  00000000  00008d40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000068  00000000  00000000  00008e5d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 56 00 	jmp	0xac	; 0xac <__ctors_end>
+   4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  10:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  14:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  18:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  1c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  20:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  24:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  28:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  2c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  30:	0c 94 1f 02 	jmp	0x43e	; 0x43e <__vector_12>
+  34:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  38:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  3c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  40:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  44:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  48:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  4c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  50:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  54:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  58:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  5c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  60:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  64:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  68:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  6c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  70:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  74:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  78:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  7c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  80:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  84:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  88:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  8c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  90:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  94:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  98:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  9c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a0:	0c 94 97 01 	jmp	0x32e	; 0x32e <__vector_40>
+  a4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+
+000000ac <__ctors_end>:
+  ac:	11 24       	eor	r1, r1
+  ae:	1f be       	out	0x3f, r1	; 63
+  b0:	cf ef       	ldi	r28, 0xFF	; 255
+  b2:	cd bf       	out	0x3d, r28	; 61
+  b4:	df e2       	ldi	r29, 0x2F	; 47
+  b6:	de bf       	out	0x3e, r29	; 62
+
+000000b8 <__do_copy_data>:
+  b8:	10 e2       	ldi	r17, 0x20	; 32
+  ba:	a0 e0       	ldi	r26, 0x00	; 0
+  bc:	b0 e2       	ldi	r27, 0x20	; 32
+  be:	e4 e8       	ldi	r30, 0x84	; 132
+  c0:	f4 e0       	ldi	r31, 0x04	; 4
+  c2:	02 c0       	rjmp	.+4      	; 0xc8 <__do_copy_data+0x10>
+  c4:	05 90       	lpm	r0, Z+
+  c6:	0d 92       	st	X+, r0
+  c8:	a0 32       	cpi	r26, 0x20	; 32
+  ca:	b1 07       	cpc	r27, r17
+  cc:	d9 f7       	brne	.-10     	; 0xc4 <__do_copy_data+0xc>
+
+000000ce <__do_clear_bss>:
+  ce:	2b e2       	ldi	r18, 0x2B	; 43
+  d0:	a0 e2       	ldi	r26, 0x20	; 32
+  d2:	b0 e2       	ldi	r27, 0x20	; 32
+  d4:	01 c0       	rjmp	.+2      	; 0xd8 <.do_clear_bss_start>
+
+000000d6 <.do_clear_bss_loop>:
+  d6:	1d 92       	st	X+, r1
+
+000000d8 <.do_clear_bss_start>:
+  d8:	a2 3e       	cpi	r26, 0xE2	; 226
+  da:	b2 07       	cpc	r27, r18
+  dc:	e1 f7       	brne	.-8      	; 0xd6 <.do_clear_bss_loop>
+  de:	0e 94 78 01 	call	0x2f0	; 0x2f0 <main>
+  e2:	0c 94 40 02 	jmp	0x480	; 0x480 <_exit>
+
+000000e6 <__bad_interrupt>:
+  e6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ea <read_baud_switches>:
+
+volatile enum RcvState rcvState = HiByte;
+
+void read_baud_switches()
+{
+	PORTA.OUTCLR = PIN1_bm | PIN2_bm | PIN3_bm | PIN4_bm;
+  ea:	e0 e0       	ldi	r30, 0x00	; 0
+  ec:	f6 e0       	ldi	r31, 0x06	; 6
+  ee:	8e e1       	ldi	r24, 0x1E	; 30
+  f0:	86 83       	std	Z+6, r24	; 0x06
+	PORTA_PIN1CTRL = PORT_OPC_PULLUP_gc | PORT_ISC_FORCE_ENABLE_gc;
+  f2:	80 93 11 06 	sts	0x0611, r24	; 0x800611 <__TEXT_REGION_LENGTH__+0x7f7611>
+	PORTA_PIN2CTRL = PORT_OPC_PULLUP_gc | PORT_ISC_FORCE_ENABLE_gc; 
+  f6:	80 93 12 06 	sts	0x0612, r24	; 0x800612 <__TEXT_REGION_LENGTH__+0x7f7612>
+	PORTA_PIN3CTRL = PORT_OPC_PULLUP_gc | PORT_ISC_FORCE_ENABLE_gc;
+  fa:	80 93 13 06 	sts	0x0613, r24	; 0x800613 <__TEXT_REGION_LENGTH__+0x7f7613>
+	PORTA_PIN4CTRL = PORT_OPC_PULLUP_gc | PORT_ISC_FORCE_ENABLE_gc;
+  fe:	80 93 14 06 	sts	0x0614, r24	; 0x800614 <__TEXT_REGION_LENGTH__+0x7f7614>
+	
+	setting = (PORTA.IN & 0x1F) >> 1;
+ 102:	80 85       	ldd	r24, Z+8	; 0x08
+ 104:	8f 71       	andi	r24, 0x1F	; 31
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	95 95       	asr	r25
+ 10a:	87 95       	ror	r24
+ 10c:	80 93 21 20 	sts	0x2021, r24	; 0x802021 <setting>
+	selected_baudctrla = baudctrla[setting];
+ 110:	e0 91 21 20 	lds	r30, 0x2021	; 0x802021 <setting>
+ 114:	f0 e0       	ldi	r31, 0x00	; 0
+ 116:	e0 5f       	subi	r30, 0xF0	; 240
+ 118:	ff 4d       	sbci	r31, 0xDF	; 223
+ 11a:	80 81       	ld	r24, Z
+ 11c:	80 93 28 20 	sts	0x2028, r24	; 0x802028 <selected_baudctrla>
+	selected_baudctrlb = baudctrlb[setting];
+ 120:	e0 91 21 20 	lds	r30, 0x2021	; 0x802021 <setting>
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	e0 50       	subi	r30, 0x00	; 0
+ 128:	f0 4e       	sbci	r31, 0xE0	; 224
+ 12a:	80 81       	ld	r24, Z
+ 12c:	80 93 e1 2b 	sts	0x2BE1, r24	; 0x802be1 <selected_baudctrlb>
+ 130:	08 95       	ret
+
+00000132 <init_clk>:
+}
+
+void init_clk()
+{
+	CCP = CCP_IOREG_gc;
+ 132:	88 ed       	ldi	r24, 0xD8	; 216
+ 134:	84 bf       	out	0x34, r24	; 52
+	OSC_CTRL = OSC_RC32MEN_bm;
+ 136:	82 e0       	ldi	r24, 0x02	; 2
+ 138:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <__TEXT_REGION_LENGTH__+0x7f7050>
+	
+	while(!(OSC_STATUS & OSC_RC32MRDY_bm)){};
+ 13c:	80 91 51 00 	lds	r24, 0x0051	; 0x800051 <__TEXT_REGION_LENGTH__+0x7f7051>
+ 140:	81 ff       	sbrs	r24, 1
+ 142:	fc cf       	rjmp	.-8      	; 0x13c <init_clk+0xa>
+		
+	CCP = CCP_IOREG_gc;
+ 144:	88 ed       	ldi	r24, 0xD8	; 216
+ 146:	84 bf       	out	0x34, r24	; 52
+	CLK_CTRL = CLK_SCLKSEL_RC32M_gc;
+ 148:	81 e0       	ldi	r24, 0x01	; 1
+ 14a:	80 93 40 00 	sts	0x0040, r24	; 0x800040 <__TEXT_REGION_LENGTH__+0x7f7040>
+ 14e:	08 95       	ret
+
+00000150 <init_interrupts>:
+	
+}
+
+void init_interrupts()
+{
+	PMIC_CTRL = PMIC_HILVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_LOLVLEN_bm;
+ 150:	87 e0       	ldi	r24, 0x07	; 7
+ 152:	80 93 a2 00 	sts	0x00A2, r24	; 0x8000a2 <__TEXT_REGION_LENGTH__+0x7f70a2>
+ 156:	08 95       	ret
+
+00000158 <init_usart>:
+}
+
+void init_usart()
+{
+	
+	PORTD.DIRCLR = PIN2_bm;
+ 158:	84 e0       	ldi	r24, 0x04	; 4
+ 15a:	80 93 62 06 	sts	0x0662, r24	; 0x800662 <__TEXT_REGION_LENGTH__+0x7f7662>
+	USARTD0_CTRLA = USART_DREIF_bm | USART_RXCINTLVL0_bm;
+ 15e:	80 e3       	ldi	r24, 0x30	; 48
+ 160:	80 93 c2 09 	sts	0x09C2, r24	; 0x8009c2 <__TEXT_REGION_LENGTH__+0x7f79c2>
+	USARTD0_CTRLB = USART_RXEN_bm | USART_TXEN_bm;
+ 164:	88 e1       	ldi	r24, 0x18	; 24
+ 166:	80 93 c3 09 	sts	0x09C3, r24	; 0x8009c3 <__TEXT_REGION_LENGTH__+0x7f79c3>
+	USARTD0_CTRLC = USART_CMODE_ASYNCHRONOUS_gc | USART_PMODE_DISABLED_gc | USART_CHSIZE_8BIT_gc;
+ 16a:	83 e0       	ldi	r24, 0x03	; 3
+ 16c:	80 93 c4 09 	sts	0x09C4, r24	; 0x8009c4 <__TEXT_REGION_LENGTH__+0x7f79c4>
+
+	//115.2 BAUD BSEL = 131, BSCALE = -3
+//	USARTD0_BAUDCTRLA = 131;
+//	USARTD0_BAUDCTRLB = -3 << 4;
+	
+	USARTD0_BAUDCTRLA = selected_baudctrla;// 131;
+ 170:	80 91 28 20 	lds	r24, 0x2028	; 0x802028 <selected_baudctrla>
+ 174:	80 93 c6 09 	sts	0x09C6, r24	; 0x8009c6 <__TEXT_REGION_LENGTH__+0x7f79c6>
+	USARTD0_BAUDCTRLB = selected_baudctrlb << 4; // -3 << 4;	
+ 178:	80 91 e1 2b 	lds	r24, 0x2BE1	; 0x802be1 <selected_baudctrlb>
+ 17c:	82 95       	swap	r24
+ 17e:	80 7f       	andi	r24, 0xF0	; 240
+ 180:	80 93 c7 09 	sts	0x09C7, r24	; 0x8009c7 <__TEXT_REGION_LENGTH__+0x7f79c7>
+ 184:	08 95       	ret
+
+00000186 <init_timer>:
+
+//"Timeout" timer
+void init_timer()
+{
+	
+	TCC4.CTRLB = 0; //Normal mode, disable circ buffer, WFG: normal PER
+ 186:	e0 e0       	ldi	r30, 0x00	; 0
+ 188:	f8 e0       	ldi	r31, 0x08	; 8
+ 18a:	11 82       	std	Z+1, r1	; 0x01
+	TCC4.CTRLC = 0; //no polarity change or comp output val
+ 18c:	12 82       	std	Z+2, r1	; 0x02
+	TCC4.CTRLD = 0; //no event action
+ 18e:	13 82       	std	Z+3, r1	; 0x03
+	TCC4.CTRLE = 0; //doesn't matter
+ 190:	14 82       	std	Z+4, r1	; 0x04
+	TCC4.CTRLF = 0; //doesn't matter
+ 192:	15 82       	std	Z+5, r1	; 0x05
+	TCC4.INTCTRLA = TC4_OVFINTLVL_gm;
+ 194:	83 e0       	ldi	r24, 0x03	; 3
+ 196:	86 83       	std	Z+6, r24	; 0x06
+	TCC4.CTRLA = TC4_CLKSEL0_bm; //Prescaler: Clk, start the timer
+ 198:	81 e0       	ldi	r24, 0x01	; 1
+ 19a:	80 83       	st	Z, r24
+	//Stop the "timeout" timer until we start receiving
+	TCC4.CTRLGSET = TC4_STOP_bm;
+ 19c:	80 e2       	ldi	r24, 0x20	; 32
+ 19e:	81 87       	std	Z+9, r24	; 0x09
+ 1a0:	08 95       	ret
+
+000001a2 <ws2812drv_init>:
+
+
+void ws2812drv_init(void)
+{
+	// Setup EDMA channel 0(+1)
+	EDMA.CTRL = EDMA_ENABLE_bm | EDMA_CHMODE_STD02_gc | EDMA_DBUFMODE_DISABLE_gc | EDMA_PRIMODE_CH0123_gc;
+ 1a2:	a0 e0       	ldi	r26, 0x00	; 0
+ 1a4:	b1 e0       	ldi	r27, 0x01	; 1
+ 1a6:	83 eb       	ldi	r24, 0xB3	; 179
+ 1a8:	8c 93       	st	X, r24
+	EDMA.CH0.CTRLB = EDMA_CH_TRNINTLVL_OFF_gc;
+ 1aa:	51 96       	adiw	r26, 0x11	; 17
+ 1ac:	1c 92       	st	X, r1
+ 1ae:	51 97       	sbiw	r26, 0x11	; 17
+	EDMA.CH0.ADDRCTRL = EDMA_CH_RELOAD_NONE_gc | EDMA_CH_DIR_INC_gc;
+ 1b0:	81 e0       	ldi	r24, 0x01	; 1
+ 1b2:	52 96       	adiw	r26, 0x12	; 18
+ 1b4:	8c 93       	st	X, r24
+ 1b6:	52 97       	sbiw	r26, 0x12	; 18
+	EDMA.CH0.DESTADDRCTRL = EDMA_CH_RELOAD_NONE_gc | EDMA_CH_DESTDIR_FIXED_gc;
+ 1b8:	53 96       	adiw	r26, 0x13	; 19
+ 1ba:	1c 92       	st	X, r1
+ 1bc:	53 97       	sbiw	r26, 0x13	; 19
+	EDMA.CH0.DESTADDR = (uint16_t)&USARTC0.DATA;
+ 1be:	e0 ec       	ldi	r30, 0xC0	; 192
+ 1c0:	f8 e0       	ldi	r31, 0x08	; 8
+ 1c2:	5c 96       	adiw	r26, 0x1c	; 28
+ 1c4:	ed 93       	st	X+, r30
+ 1c6:	fc 93       	st	X, r31
+ 1c8:	5d 97       	sbiw	r26, 0x1d	; 29
+	EDMA.CH0.TRIGSRC = EDMA_CH_TRIGSRC_USARTC0_DRE_gc;
+ 1ca:	9d e4       	ldi	r25, 0x4D	; 77
+ 1cc:	54 96       	adiw	r26, 0x14	; 20
+ 1ce:	9c 93       	st	X, r25
+
+	// Setup port pins for TxD, XCK and LUT0OUT
+	PORTC.PIN0CTRL = PORT_OPC_TOTEM_gc;                         // LUT0OUT (data to WS2812)
+ 1d0:	a0 e4       	ldi	r26, 0x40	; 64
+ 1d2:	b6 e0       	ldi	r27, 0x06	; 6
+ 1d4:	50 96       	adiw	r26, 0x10	; 16
+ 1d6:	1c 92       	st	X, r1
+ 1d8:	50 97       	sbiw	r26, 0x10	; 16
+	PORTC.PIN1CTRL = PORT_OPC_TOTEM_gc | PORT_ISC_RISING_gc;    // XCK
+ 1da:	51 96       	adiw	r26, 0x11	; 17
+ 1dc:	8c 93       	st	X, r24
+ 1de:	51 97       	sbiw	r26, 0x11	; 17
+	PORTC.PIN3CTRL = PORT_OPC_TOTEM_gc | PORT_ISC_LEVEL_gc;     // TxD
+ 1e0:	83 e0       	ldi	r24, 0x03	; 3
+ 1e2:	53 96       	adiw	r26, 0x13	; 19
+ 1e4:	8c 93       	st	X, r24
+ 1e6:	53 97       	sbiw	r26, 0x13	; 19
+	PORTC.DIRSET = PIN0_bm | PIN1_bm | PIN3_bm;
+ 1e8:	9b e0       	ldi	r25, 0x0B	; 11
+ 1ea:	11 96       	adiw	r26, 0x01	; 1
+ 1ec:	9c 93       	st	X, r25
+
+	// Setup Event channel 0 to TxD (async)
+	EVSYS.CH0MUX = EVSYS_CHMUX_PORTC_PIN3_gc;
+ 1ee:	a0 e8       	ldi	r26, 0x80	; 128
+ 1f0:	b1 e0       	ldi	r27, 0x01	; 1
+ 1f2:	93 e6       	ldi	r25, 0x63	; 99
+ 1f4:	9c 93       	st	X, r25
+	EVSYS.CH0CTRL = EVSYS_DIGFILT_1SAMPLE_gc;
+ 1f6:	18 96       	adiw	r26, 0x08	; 8
+ 1f8:	1c 92       	st	X, r1
+ 1fa:	18 97       	sbiw	r26, 0x08	; 8
+	// Setup Event channel 6 to XCK rising edge
+	EVSYS.CH6MUX = EVSYS_CHMUX_PORTC_PIN1_gc;
+ 1fc:	91 e6       	ldi	r25, 0x61	; 97
+ 1fe:	16 96       	adiw	r26, 0x06	; 6
+ 200:	9c 93       	st	X, r25
+ 202:	16 97       	sbiw	r26, 0x06	; 6
+	EVSYS.CH6CTRL = EVSYS_DIGFILT_1SAMPLE_gc;
+ 204:	1e 96       	adiw	r26, 0x0e	; 14
+ 206:	1c 92       	st	X, r1
+
+	// Setup USART in master SPI mode 1, MSB first
+	USARTC0.BAUDCTRLA = 19;                                     // 800.000 baud (1250 ns @ 32 MHz)
+ 208:	93 e1       	ldi	r25, 0x13	; 19
+ 20a:	96 83       	std	Z+6, r25	; 0x06
+	USARTC0.BAUDCTRLB = 0;
+ 20c:	17 82       	std	Z+7, r1	; 0x07
+	USARTC0.CTRLA = USART_RXCINTLVL_OFF_gc | USART_TXCINTLVL_OFF_gc; 
+ 20e:	12 82       	std	Z+2, r1	; 0x02
+	USARTC0.CTRLC = USART_CMODE_MSPI_gc | (1 << 1);             // UDORD=0 UCPHA=1
+ 210:	92 ec       	ldi	r25, 0xC2	; 194
+ 212:	94 83       	std	Z+4, r25	; 0x04
+	USARTC0.CTRLD = USART_DECTYPE_DATA_gc | USART_LUTACT_OFF_gc | USART_PECACT_OFF_gc;
+ 214:	15 82       	std	Z+5, r1	; 0x05
+	USARTC0.CTRLB = USART_TXEN_bm;
+ 216:	98 e0       	ldi	r25, 0x08	; 8
+ 218:	93 83       	std	Z+3, r25	; 0x03
+
+	// Setup XCL BTC0 timer to 1shot pwm generation
+	XCL.CTRLE = XCL_CMDSEL_NONE_gc | XCL_TCSEL_BTC0_gc | XCL_CLKSEL_DIV1_gc;
+ 21a:	e0 e6       	ldi	r30, 0x60	; 96
+ 21c:	f4 e0       	ldi	r31, 0x04	; 4
+ 21e:	91 e1       	ldi	r25, 0x11	; 17
+ 220:	94 83       	std	Z+4, r25	; 0x04
+	XCL.CTRLF = XCL_CMDEN_DISABLE_gc | 0x03;                    // 0x03 : One-shot PWM (missing in iox32e5.h)
+ 222:	85 83       	std	Z+5, r24	; 0x05
+	XCL.CTRLG = XCL_EVACTEN_bm | (0x03<<3) | XCL_EVSRC_EVCH6_gc; // 0x03<<3 : EVACT0=RESTART (missing in iox32e5.h)
+ 224:	8e e9       	ldi	r24, 0x9E	; 158
+ 226:	86 83       	std	Z+6, r24	; 0x06
+	XCL.PERCAPTL = 22;                                          // Output high time if data is 1 (from RESTART to falling edge of one-shot)
+ 228:	86 e1       	ldi	r24, 0x16	; 22
+ 22a:	86 87       	std	Z+14, r24	; 0x0e
+	XCL.CMPL = 13;                                              // Output high time if data is 0 (from RESTART to rising edge of one-shot)
+ 22c:	8d e0       	ldi	r24, 0x0D	; 13
+ 22e:	84 87       	std	Z+12, r24	; 0x0c
+
+	// Setup XCL LUT
+	XCL.CTRLA = XCL_LUT0OUTEN_PIN0_gc | XCL_PORTSEL_PC_gc | XCL_LUTCONF_MUX_gc;  // Setup glue logic for MUX
+ 230:	84 e4       	ldi	r24, 0x44	; 68
+ 232:	80 83       	st	Z, r24
+	XCL.CTRLB = 0x50;                                           // IN3SEL=XCL, IN2SEL=XCL, IN1SEL=EVSYS, IN0SEL=EVSYS (missing in iox32e5.h)
+ 234:	80 e5       	ldi	r24, 0x50	; 80
+ 236:	81 83       	std	Z+1, r24	; 0x01
+	XCL.CTRLC = XCL_EVASYSEL0_bm | XCL_DLY0CONF_DISABLE_gc;      // Async inputs, no delay
+ 238:	80 e4       	ldi	r24, 0x40	; 64
+ 23a:	82 83       	std	Z+2, r24	; 0x02
+	XCL.CTRLD = 0xA0;                                           // LUT truthtables (only LUT1 is used)
+ 23c:	80 ea       	ldi	r24, 0xA0	; 160
+ 23e:	83 83       	std	Z+3, r24	; 0x03
+ 240:	08 95       	ret
+
+00000242 <ws2812drv_start_transfer>:
+
+}
+
+void ws2812drv_start_transfer()
+{
+	EDMA.CH0.ADDR = (uint16_t)bytes;
+ 242:	e0 e0       	ldi	r30, 0x00	; 0
+ 244:	f1 e0       	ldi	r31, 0x01	; 1
+ 246:	89 e2       	ldi	r24, 0x29	; 41
+ 248:	90 e2       	ldi	r25, 0x20	; 32
+ 24a:	80 8f       	std	Z+24, r24	; 0x18
+ 24c:	91 8f       	std	Z+25, r25	; 0x19
+	EDMA.CH0.TRFCNT = byte_count;
+ 24e:	80 91 26 20 	lds	r24, 0x2026	; 0x802026 <byte_count>
+ 252:	90 91 27 20 	lds	r25, 0x2027	; 0x802027 <byte_count+0x1>
+ 256:	86 8b       	std	Z+22, r24	; 0x16
+ 258:	97 8b       	std	Z+23, r25	; 0x17
+	EDMA.CH0.CTRLA = EDMA_CH_ENABLE_bm | EDMA_CH_SINGLE_bm; // Start DMA transfer to LEDs
+ 25a:	84 e8       	ldi	r24, 0x84	; 132
+ 25c:	80 8b       	std	Z+16, r24	; 0x10
+ 25e:	08 95       	ret
+
+00000260 <transmit_ws2812>:
+}
+
+void transmit_ws2812()
+{
+	//DEBUG START
+	while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 260:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 264:	85 ff       	sbrs	r24, 5
+ 266:	fc cf       	rjmp	.-8      	; 0x260 <transmit_ws2812>
+	USARTD0_DATA = 0x55;
+ 268:	85 e5       	ldi	r24, 0x55	; 85
+ 26a:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+			
+	while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 26e:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 272:	85 ff       	sbrs	r24, 5
+ 274:	fc cf       	rjmp	.-8      	; 0x26e <transmit_ws2812+0xe>
+	USARTD0_DATA = hi_byte;
+ 276:	80 91 23 20 	lds	r24, 0x2023	; 0x802023 <hi_byte>
+ 27a:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+	while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 27e:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 282:	85 ff       	sbrs	r24, 5
+ 284:	fc cf       	rjmp	.-8      	; 0x27e <transmit_ws2812+0x1e>
+	USARTD0_DATA = lo_byte & 0xFF;
+ 286:	80 91 22 20 	lds	r24, 0x2022	; 0x802022 <lo_byte>
+ 28a:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+
+			while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 28e:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 292:	85 ff       	sbrs	r24, 5
+ 294:	fc cf       	rjmp	.-8      	; 0x28e <transmit_ws2812+0x2e>
+			USARTD0_DATA = 0x55;
+ 296:	85 e5       	ldi	r24, 0x55	; 85
+ 298:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+			while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 29c:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 2a0:	85 ff       	sbrs	r24, 5
+ 2a2:	fc cf       	rjmp	.-8      	; 0x29c <transmit_ws2812+0x3c>
+			USARTD0_DATA = setting;
+ 2a4:	80 91 21 20 	lds	r24, 0x2021	; 0x802021 <setting>
+ 2a8:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+			while(!(USARTD0_STATUS & USART_DREIF_bm)){};
+ 2ac:	80 91 c1 09 	lds	r24, 0x09C1	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+ 2b0:	85 ff       	sbrs	r24, 5
+ 2b2:	fc cf       	rjmp	.-8      	; 0x2ac <transmit_ws2812+0x4c>
+			USARTD0_DATA = 0x55;	
+ 2b4:	85 e5       	ldi	r24, 0x55	; 85
+ 2b6:	80 93 c0 09 	sts	0x09C0, r24	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+	//DEBUG END
+	ws2812drv_start_transfer();
+ 2ba:	0e 94 21 01 	call	0x242	; 0x242 <ws2812drv_start_transfer>
+	rcvState = HiByte;
+ 2be:	10 92 20 20 	sts	0x2020, r1	; 0x802020 <__data_end>
+ 2c2:	08 95       	ret
+
+000002c4 <swap_r_g>:
+
+//swaps the data for r and g to match the g-r-b ws2812b data pattern
+void swap_r_g()
+{
+	uint8_t temp;
+	for(uint16_t i = 0; i < byte_count; i+=3)
+ 2c4:	80 e0       	ldi	r24, 0x00	; 0
+ 2c6:	90 e0       	ldi	r25, 0x00	; 0
+ 2c8:	0b c0       	rjmp	.+22     	; 0x2e0 <swap_r_g+0x1c>
+	{
+		temp = bytes[i];
+ 2ca:	dc 01       	movw	r26, r24
+ 2cc:	a7 5d       	subi	r26, 0xD7	; 215
+ 2ce:	bf 4d       	sbci	r27, 0xDF	; 223
+ 2d0:	2c 91       	ld	r18, X
+		bytes[i] = bytes[i+1];
+ 2d2:	fc 01       	movw	r30, r24
+ 2d4:	e6 5d       	subi	r30, 0xD6	; 214
+ 2d6:	ff 4d       	sbci	r31, 0xDF	; 223
+ 2d8:	30 81       	ld	r19, Z
+ 2da:	3c 93       	st	X, r19
+		bytes[i+1] = temp;
+ 2dc:	20 83       	st	Z, r18
+
+//swaps the data for r and g to match the g-r-b ws2812b data pattern
+void swap_r_g()
+{
+	uint8_t temp;
+	for(uint16_t i = 0; i < byte_count; i+=3)
+ 2de:	03 96       	adiw	r24, 0x03	; 3
+ 2e0:	20 91 26 20 	lds	r18, 0x2026	; 0x802026 <byte_count>
+ 2e4:	30 91 27 20 	lds	r19, 0x2027	; 0x802027 <byte_count+0x1>
+ 2e8:	82 17       	cp	r24, r18
+ 2ea:	93 07       	cpc	r25, r19
+ 2ec:	70 f3       	brcs	.-36     	; 0x2ca <swap_r_g+0x6>
+	{
+		temp = bytes[i];
+		bytes[i] = bytes[i+1];
+		bytes[i+1] = temp;
+	}
+}
+ 2ee:	08 95       	ret
+
+000002f0 <main>:
+
+int main(void)
+{
+	cli();
+ 2f0:	f8 94       	cli
+	
+	
+	
+	PORTD.DIRSET = PIN3_bm;
+ 2f2:	88 e0       	ldi	r24, 0x08	; 8
+ 2f4:	80 93 61 06 	sts	0x0661, r24	; 0x800661 <__TEXT_REGION_LENGTH__+0x7f7661>
+	
+	//DEBUG START
+	PORTA.DIRSET = PIN0_bm;
+ 2f8:	e0 e0       	ldi	r30, 0x00	; 0
+ 2fa:	f6 e0       	ldi	r31, 0x06	; 6
+ 2fc:	81 e0       	ldi	r24, 0x01	; 1
+ 2fe:	81 83       	std	Z+1, r24	; 0x01
+	PORTA.OUTSET = PIN0_bm;
+ 300:	85 83       	std	Z+5, r24	; 0x05
+	//DEBUG END
+	
+	init_clk();
+ 302:	0e 94 99 00 	call	0x132	; 0x132 <init_clk>
+	init_interrupts();
+ 306:	0e 94 a8 00 	call	0x150	; 0x150 <init_interrupts>
+	read_baud_switches();
+ 30a:	0e 94 75 00 	call	0xea	; 0xea <read_baud_switches>
+	init_usart();
+ 30e:	0e 94 ac 00 	call	0x158	; 0x158 <init_usart>
+	ws2812drv_init();
+ 312:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <ws2812drv_init>
+	init_timer();
+ 316:	0e 94 c3 00 	call	0x186	; 0x186 <init_timer>
+	sei();
+ 31a:	78 94       	sei
+
+    /* Replace with your application code */
+    while (1) 
+    {
+		if (rcvState == Trans)
+ 31c:	80 91 20 20 	lds	r24, 0x2020	; 0x802020 <__data_end>
+ 320:	83 30       	cpi	r24, 0x03	; 3
+ 322:	e1 f7       	brne	.-8      	; 0x31c <main+0x2c>
+		{
+			swap_r_g();
+ 324:	0e 94 62 01 	call	0x2c4	; 0x2c4 <swap_r_g>
+			
+			transmit_ws2812();
+ 328:	0e 94 30 01 	call	0x260	; 0x260 <transmit_ws2812>
+ 32c:	f7 cf       	rjmp	.-18     	; 0x31c <main+0x2c>
+
+0000032e <__vector_40>:
+
+
+
+
+ISR(USARTD0_RXC_vect)
+{
+ 32e:	1f 92       	push	r1
+ 330:	0f 92       	push	r0
+ 332:	0f b6       	in	r0, 0x3f	; 63
+ 334:	0f 92       	push	r0
+ 336:	11 24       	eor	r1, r1
+ 338:	2f 93       	push	r18
+ 33a:	3f 93       	push	r19
+ 33c:	8f 93       	push	r24
+ 33e:	9f 93       	push	r25
+ 340:	ef 93       	push	r30
+ 342:	ff 93       	push	r31
+	uint8_t data = USARTD0.DATA;
+ 344:	90 91 c0 09 	lds	r25, 0x09C0	; 0x8009c0 <__TEXT_REGION_LENGTH__+0x7f79c0>
+	
+	switch (rcvState)
+ 348:	80 91 20 20 	lds	r24, 0x2020	; 0x802020 <__data_end>
+ 34c:	81 30       	cpi	r24, 0x01	; 1
+ 34e:	c1 f0       	breq	.+48     	; 0x380 <__vector_40+0x52>
+ 350:	30 f0       	brcs	.+12     	; 0x35e <__vector_40+0x30>
+ 352:	82 30       	cpi	r24, 0x02	; 2
+ 354:	d9 f1       	breq	.+118    	; 0x3cc <__vector_40+0x9e>
+ 356:	84 30       	cpi	r24, 0x04	; 4
+ 358:	09 f4       	brne	.+2      	; 0x35c <__vector_40+0x2e>
+ 35a:	60 c0       	rjmp	.+192    	; 0x41c <__EEPROM_REGION_LENGTH__+0x1c>
+ 35c:	62 c0       	rjmp	.+196    	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
+	{
+		case HiByte:
+		
+			hi_byte = data;
+ 35e:	90 93 23 20 	sts	0x2023, r25	; 0x802023 <hi_byte>
+			byte_count = (uint16_t)(hi_byte << 8);
+ 362:	20 91 23 20 	lds	r18, 0x2023	; 0x802023 <hi_byte>
+ 366:	80 e0       	ldi	r24, 0x00	; 0
+ 368:	92 2f       	mov	r25, r18
+ 36a:	80 93 26 20 	sts	0x2026, r24	; 0x802026 <byte_count>
+ 36e:	90 93 27 20 	sts	0x2027, r25	; 0x802027 <byte_count+0x1>
+			rcvState = LoByte;
+ 372:	81 e0       	ldi	r24, 0x01	; 1
+ 374:	80 93 20 20 	sts	0x2020, r24	; 0x802020 <__data_end>
+			//Start the "timeout" timer because we are done receiving
+			TCC4.CTRLGCLR = TC4_STOP_bm;
+ 378:	80 e2       	ldi	r24, 0x20	; 32
+ 37a:	80 93 08 08 	sts	0x0808, r24	; 0x800808 <__TEXT_REGION_LENGTH__+0x7f7808>
+			
+			break;
+ 37e:	51 c0       	rjmp	.+162    	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
+		case LoByte:
+			lo_byte = data;
+ 380:	90 93 22 20 	sts	0x2022, r25	; 0x802022 <lo_byte>
+			byte_count += lo_byte;
+ 384:	20 91 22 20 	lds	r18, 0x2022	; 0x802022 <lo_byte>
+ 388:	80 91 26 20 	lds	r24, 0x2026	; 0x802026 <byte_count>
+ 38c:	90 91 27 20 	lds	r25, 0x2027	; 0x802027 <byte_count+0x1>
+ 390:	82 0f       	add	r24, r18
+ 392:	91 1d       	adc	r25, r1
+ 394:	80 93 26 20 	sts	0x2026, r24	; 0x802026 <byte_count>
+ 398:	90 93 27 20 	sts	0x2027, r25	; 0x802027 <byte_count+0x1>
+			byte_count *= 3;
+ 39c:	80 91 26 20 	lds	r24, 0x2026	; 0x802026 <byte_count>
+ 3a0:	90 91 27 20 	lds	r25, 0x2027	; 0x802027 <byte_count+0x1>
+ 3a4:	9c 01       	movw	r18, r24
+ 3a6:	22 0f       	add	r18, r18
+ 3a8:	33 1f       	adc	r19, r19
+ 3aa:	82 0f       	add	r24, r18
+ 3ac:	93 1f       	adc	r25, r19
+ 3ae:	80 93 26 20 	sts	0x2026, r24	; 0x802026 <byte_count>
+ 3b2:	90 93 27 20 	sts	0x2027, r25	; 0x802027 <byte_count+0x1>
+			rcv_index = 0;
+ 3b6:	10 92 24 20 	sts	0x2024, r1	; 0x802024 <rcv_index>
+ 3ba:	10 92 25 20 	sts	0x2025, r1	; 0x802025 <rcv_index+0x1>
+			rcvState = Data;
+ 3be:	82 e0       	ldi	r24, 0x02	; 2
+ 3c0:	80 93 20 20 	sts	0x2020, r24	; 0x802020 <__data_end>
+			//reset "timeout" timer so it doesn't time out while receiving 
+			TCC4.CTRLGSET = TC4_CMD1_bm;
+ 3c4:	88 e0       	ldi	r24, 0x08	; 8
+ 3c6:	80 93 09 08 	sts	0x0809, r24	; 0x800809 <__TEXT_REGION_LENGTH__+0x7f7809>
+			
+		
+			break;
+ 3ca:	2b c0       	rjmp	.+86     	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
+		case Data:
+			
+
+		
+				PORTA.OUTTGL = PIN0_bm;
+ 3cc:	81 e0       	ldi	r24, 0x01	; 1
+ 3ce:	80 93 07 06 	sts	0x0607, r24	; 0x800607 <__TEXT_REGION_LENGTH__+0x7f7607>
+			bytes[rcv_index] = data;
+ 3d2:	e0 91 24 20 	lds	r30, 0x2024	; 0x802024 <rcv_index>
+ 3d6:	f0 91 25 20 	lds	r31, 0x2025	; 0x802025 <rcv_index+0x1>
+ 3da:	e7 5d       	subi	r30, 0xD7	; 215
+ 3dc:	ff 4d       	sbci	r31, 0xDF	; 223
+ 3de:	90 83       	st	Z, r25
+			rcv_index++;
+ 3e0:	80 91 24 20 	lds	r24, 0x2024	; 0x802024 <rcv_index>
+ 3e4:	90 91 25 20 	lds	r25, 0x2025	; 0x802025 <rcv_index+0x1>
+ 3e8:	01 96       	adiw	r24, 0x01	; 1
+ 3ea:	80 93 24 20 	sts	0x2024, r24	; 0x802024 <rcv_index>
+ 3ee:	90 93 25 20 	sts	0x2025, r25	; 0x802025 <rcv_index+0x1>
+			//reset "timeout" timer so it doesn't time out while receiving 
+			TCC4.CTRLGSET = TC4_CMD1_bm;
+ 3f2:	88 e0       	ldi	r24, 0x08	; 8
+ 3f4:	80 93 09 08 	sts	0x0809, r24	; 0x800809 <__TEXT_REGION_LENGTH__+0x7f7809>
+			if (rcv_index == byte_count)
+ 3f8:	20 91 24 20 	lds	r18, 0x2024	; 0x802024 <rcv_index>
+ 3fc:	30 91 25 20 	lds	r19, 0x2025	; 0x802025 <rcv_index+0x1>
+ 400:	80 91 26 20 	lds	r24, 0x2026	; 0x802026 <byte_count>
+ 404:	90 91 27 20 	lds	r25, 0x2027	; 0x802027 <byte_count+0x1>
+ 408:	28 17       	cp	r18, r24
+ 40a:	39 07       	cpc	r19, r25
+ 40c:	51 f4       	brne	.+20     	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
+			{
+				rcvState = Trans;
+ 40e:	83 e0       	ldi	r24, 0x03	; 3
+ 410:	80 93 20 20 	sts	0x2020, r24	; 0x802020 <__data_end>
+				//Stop the "timeout" timer because we are done receiving
+				TCC4.CTRLGSET = TC4_STOP_bm;
+ 414:	80 e2       	ldi	r24, 0x20	; 32
+ 416:	80 93 09 08 	sts	0x0809, r24	; 0x800809 <__TEXT_REGION_LENGTH__+0x7f7809>
+ 41a:	03 c0       	rjmp	.+6      	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
+				be long enough. If this is the case, we will wait till no more
+				data is received for a short period before going back to the
+				startup state.
+			*/
+			//reset "timeout" timer to wait till we stop receiving
+			TCC4.CTRLGSET = TC4_CMD1_bm;		
+ 41c:	88 e0       	ldi	r24, 0x08	; 8
+ 41e:	80 93 09 08 	sts	0x0809, r24	; 0x800809 <__TEXT_REGION_LENGTH__+0x7f7809>
+			break;
+		
+	}
+	
+
+	USARTD0_STATUS = USART_RXCIF_bm;
+ 422:	80 e8       	ldi	r24, 0x80	; 128
+ 424:	80 93 c1 09 	sts	0x09C1, r24	; 0x8009c1 <__TEXT_REGION_LENGTH__+0x7f79c1>
+}
+ 428:	ff 91       	pop	r31
+ 42a:	ef 91       	pop	r30
+ 42c:	9f 91       	pop	r25
+ 42e:	8f 91       	pop	r24
+ 430:	3f 91       	pop	r19
+ 432:	2f 91       	pop	r18
+ 434:	0f 90       	pop	r0
+ 436:	0f be       	out	0x3f, r0	; 63
+ 438:	0f 90       	pop	r0
+ 43a:	1f 90       	pop	r1
+ 43c:	18 95       	reti
+
+0000043e <__vector_12>:
+
+ISR(TCC4_OVF_vect)
+{
+ 43e:	1f 92       	push	r1
+ 440:	0f 92       	push	r0
+ 442:	0f b6       	in	r0, 0x3f	; 63
+ 444:	0f 92       	push	r0
+ 446:	11 24       	eor	r1, r1
+ 448:	8f 93       	push	r24
+	if (rcvState == LoByte || rcvState == Data)
+ 44a:	80 91 20 20 	lds	r24, 0x2020	; 0x802020 <__data_end>
+ 44e:	81 30       	cpi	r24, 0x01	; 1
+ 450:	21 f0       	breq	.+8      	; 0x45a <__vector_12+0x1c>
+ 452:	80 91 20 20 	lds	r24, 0x2020	; 0x802020 <__data_end>
+ 456:	82 30       	cpi	r24, 0x02	; 2
+ 458:	21 f4       	brne	.+8      	; 0x462 <__vector_12+0x24>
+	{
+		//We reached here while receiving so assume receive glitch
+		rcvState = Timeout;		
+ 45a:	84 e0       	ldi	r24, 0x04	; 4
+ 45c:	80 93 20 20 	sts	0x2020, r24	; 0x802020 <__data_end>
+ 460:	06 c0       	rjmp	.+12     	; 0x46e <__vector_12+0x30>
+	}
+	else if (rcvState == Timeout)
+ 462:	80 91 20 20 	lds	r24, 0x2020	; 0x802020 <__data_end>
+ 466:	84 30       	cpi	r24, 0x04	; 4
+ 468:	11 f4       	brne	.+4      	; 0x46e <__vector_12+0x30>
+	{
+		//We reached here during timeout so we can go back to normal
+		rcvState = HiByte;
+ 46a:	10 92 20 20 	sts	0x2020, r1	; 0x802020 <__data_end>
+	}
+	
+	TCC4.INTFLAGS = TC4_OVFIF_bm;
+ 46e:	81 e0       	ldi	r24, 0x01	; 1
+ 470:	80 93 0c 08 	sts	0x080C, r24	; 0x80080c <__TEXT_REGION_LENGTH__+0x7f780c>
+ 474:	8f 91       	pop	r24
+ 476:	0f 90       	pop	r0
+ 478:	0f be       	out	0x3f, r0	; 63
+ 47a:	0f 90       	pop	r0
+ 47c:	1f 90       	pop	r1
+ 47e:	18 95       	reti
+
+00000480 <_exit>:
+ 480:	f8 94       	cli
+
+00000482 <__stop_program>:
+ 482:	ff cf       	rjmp	.-2      	; 0x482 <__stop_program>
